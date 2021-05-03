@@ -14,7 +14,7 @@ class All_currencies_adapter:RecyclerView.Adapter<All_currencies_adapter.viewhol
 
     private val diffcallback = object :DiffUtil.ItemCallback<Rates>(){
         override fun areItemsTheSame(oldItem: Rates, newItem: Rates): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem == newItem
         }
 
         override fun areContentsTheSame(oldItem: Rates, newItem: Rates): Boolean {

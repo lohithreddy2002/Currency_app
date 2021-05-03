@@ -1,7 +1,11 @@
 package com.example.currency_app.entity
 
+import androidx.room.Entity
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
+@Entity(tableName = "exchange")
 data class Rates(
-    val id:Int,
     val AED: Double,
     val AFN: Double,
     val ALL: Double,
@@ -207,4 +211,4 @@ data class Rates(
     val ZMK: Double,
     val ZMW: Double,
     val ZWD: Double
-)
+):Serializable
