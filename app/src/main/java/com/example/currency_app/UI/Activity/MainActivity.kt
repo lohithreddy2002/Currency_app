@@ -10,10 +10,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var viwmodel: Viewmodel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val repository = service()
+        val factory = factory(repository)
 
+        viwmodel = ViewModelProvider(this, factory).get(Viewmodel::class.java)
         bottom_nav.setupWithNavController(recycle.findNavController())
     }
 }
